@@ -1,0 +1,51 @@
+<!-- ventas_frontend/templates/ofertas.html -->
+{% extends 'base.html' %}
+
+{% block title %}Ofertas - New Sushi{% endblock %}
+
+{% block content %}
+<h2>Ofertas Especiales</h2>
+
+<div class="promotion">
+    <h3>¡Compra sobre $10,000 y recibe una bebida de regalo!</h3>
+    <img src="/static/img/promotion.jpg" alt="Promotion Image" class="promotion-image">
+</div>
+
+<div class="product-menu">
+    <div class="product-item">
+        <img src="/static/img/avocado-tori.jpg" alt="Sushi Avocado Tori" class="product-image">
+        <h3>Sushi Avocado Tori</h3>
+        <p>Delicioso sushi con aguacate y pollo teriyaki.</p>
+        <p>Precio: $12.99</p>
+        <div class="product-actions">
+            <input type="number" value="1" min="1" class="quantity-input">
+            <button class="btn btn-add" onclick="addToCart('Sushi Avocado Tori', 12.99, this)">Añadir al carrito</button>
+            <button class="btn btn-remove" onclick="removeFromCart('Sushi Avocado Tori', this)">Eliminar del carrito</button>
+        </div>
+        <p class="message" style="display: none;"></p>
+    </div>
+    <div class="product-item">
+        <img src="/static/img/california-baby.jpg" alt="Sushi California Baby" class="product-image">
+        <h3>Sushi California Baby</h3>
+        <p>Clásico sushi California con surimi y aguacate.</p>
+        <p>Precio: $10.99</p>
+        <div class="product-actions">
+            <input type="number" value="1" min="1" class="quantity-input">
+            <button class="btn btn-add" onclick="addToCart('Sushi California Baby', 10.99, this)">Añadir al carrito</button>
+            <button class="btn btn-remove" onclick="removeFromCart('Sushi California Baby', this)">Eliminar del carrito</button>
+        </div>
+        <p class="message" style="display: none;"></p>
+    </div>
+</div>
+
+<div class="cart-summary">
+    <h3>Resumen del Carrito</h3>
+    <ul id="cart-items" class="cart-items"></ul>
+    <p id="cart-total" class="cart-total">Total a pagar: $0.00</p>
+    <a href="/carrito.html" class="btn btn-checkout">Ir al carrito</a>
+</div>
+
+{% endblock %}
+
+<link rel="stylesheet" href="/static/css/ofertas.css">
+<script src="/static/js/ofertas.js"></script>

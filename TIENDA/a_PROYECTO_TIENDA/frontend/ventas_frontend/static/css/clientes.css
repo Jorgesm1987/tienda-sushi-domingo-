@@ -1,0 +1,124 @@
+/* static/css/gestionar_clientes.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gestion-clientes {
+    background-color: rgb(26, 9, 9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.gestion-clientes h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0e0d0d;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: rgb(16, 15, 15);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    margin: 5px;
+}
+
+.form-actions button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: rgb(8, 7, 7);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}

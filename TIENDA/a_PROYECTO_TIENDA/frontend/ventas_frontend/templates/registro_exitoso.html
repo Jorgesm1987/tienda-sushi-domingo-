@@ -1,0 +1,19 @@
+<!-- ventas_frontend/templates/registro_exitoso.html -->
+{% extends 'base.html' %}
+
+{% block title %}Registro Exitoso{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Registro Exitoso</h2>
+    <div class="alert alert-success" role="alert">
+        Tu registro se ha completado exitosamente. ¡Bienvenido a New Sushi!
+    </div>
+    <div class="text-center">
+        <a href="/home.html" class="btn btn-primary">Volver al Inicio</a>
+    </div>
+</div>
+{% endblock %}
+
+<link rel="stylesheet" href="/static/css/registro_exitoso.css">
+<script src="/static/js/registro_exitoso.js"></script>

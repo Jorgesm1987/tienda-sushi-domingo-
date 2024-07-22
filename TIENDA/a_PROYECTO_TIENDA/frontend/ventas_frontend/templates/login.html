@@ -1,0 +1,50 @@
+<!-- ventas_frontend/templates/promociones.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login - New Sushi{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>Login</h2>
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" placeholder="Ingrese email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Ingrese password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var email = document.querySelector('#email').value;
+      var password = document.querySelector('#password').value;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/api/clientes/login/' + email + '/' + password, true);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          var cliente = JSON.parse(xhr.responseText);
+          if (cliente) {
+            window.location.href = '/clientes/' + cliente.id_cliente;
+          } else {
+            alert('Usuario o contraseña incorrectos');
+          }
+        } else {
+          alert('Error al iniciar sesión');
+        }
+      };
+      xhr.send();
+    });
+  });
+</script>
+{% endblock %}
+
+<link rel="stylesheet" href="/static/css/login.css">
+<script src="/static/js/login.js"></script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}New Sushi{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/scripts.js" defer></script>
+</head>
+<body>
+    <header class="navbar-fixed">
+        <div class="navbar-container">
+            <h1>New Sushi</h1>  
+            <nav>
+                <ul>
+                    <li><a href="/home">Inicio</a></li>
+                    <li><a href="/empleados">Empleados</a></li>
+                    <li><a href="/clientes">Clientes</a></li>
+                    <li><a href="/catalogo">Catálogo</a></li>
+                    <li><a href="/carrito">Carrito</a></li>
+                    <li><a href="/ofertas">Ofertas</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="w3-top w3-hide-small">
+        <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+            <a href="/home" class="w3-bar-item w3-button">INICIO</a>
+            <a href="/empleados" class="w3-bar-item w3-button">EMPLEADOS</a>
+            <a href="/clientes" class="w3-bar-item w3-button">CLIENTES</a>
+            <a href="/catalogo" class="w3-bar-item w3-button">CATALOGO</a>
+            <a href="/carrito" class="w3-bar-item w3-button">CARRO DE COMPRAS</a>
+            <a href="/ofertas" class="w3-bar-item w3-button">OFERTAS</a>
+            <a href="/promociones" class="w3-bar-item w3-button">PROMOCIONES</a>
+        </div>
+    </div>
+
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home" style="background-color: black;">
+        <div class="w3-display-bottomleft w3-padding">
+            <span class="w3-tag w3-xlarge" style="color: rgb(165, 159, 159);">Abierto desde las 12:00 a 24:00 Horas</span>
+        </div>
+        <div class="w3-display-middle w3-center">
+            <!-- Optional content for the middle of the header -->
+            contenido
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>Contacto: tienda@sushi.com | Teléfono: 123-456-789</p>
+    </footer>
+</body>
+</html>

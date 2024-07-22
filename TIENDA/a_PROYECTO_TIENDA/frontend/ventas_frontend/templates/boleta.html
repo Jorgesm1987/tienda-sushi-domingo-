@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Boleta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Boleta de Compra</h2>
+    <p>Transacción ID: {{ transaccion.id_transaccion }}</p>
+    <p>Fecha: {{ transaccion.fecha }}</p>
+    <p>Total: ${{ transaccion.total }}</p>
+
+    <h3>Detalle de Compra</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>${{ item.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

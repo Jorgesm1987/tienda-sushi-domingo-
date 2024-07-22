@@ -1,0 +1,64 @@
+<!-- ventas_frontend/templates/empleados.html -->
+{% extends 'base.html' %}
+
+{% block title %}Gestión de Empleados - New Sushi{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Gestión de Empleados</h2>
+    <form id="empleado-form">
+        <div class="form-group">
+            <label for="run">RUN</label>
+            <input type="text" id="run" class="form-control" placeholder="1-1">
+        </div>
+        <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" id="nombres" class="form-control" placeholder="Ingrese nombres">
+        </div>
+        <div class="form-group">
+            <label for="ap_paterno">Apellido Paterno</label>
+            <input type="text" id="ap_paterno" class="form-control" placeholder="Ingrese apellido paterno">
+        </div>
+        <div class="form-group">
+            <label for="ap_materno">Apellido Materno</label>
+            <input type="text" id="ap_materno" class="form-control" placeholder="Ingrese apellido materno">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Ingrese email">
+        </div>
+        <div class="form-group">
+            <label for="genero">Género</label>
+            <select id="genero" class="form-control">
+                <option>Masculino</option>
+                <option>Femenino</option>
+                <option>Otro</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="region">Región</label>
+            <input type="text" id="region" class="form-control" placeholder="Ingrese región">
+        </div>
+        <div class="form-group">
+            <label for="provincia">Provincia</label>
+            <input type="text" id="provincia" class="form-control" placeholder="Ingrese provincia">
+        </div>
+        <div class="form-group">
+            <label for="comuna">Comuna</label>
+            <input type="text" id="comuna" class="form-control" placeholder="Ingrese comuna">
+        </div>
+        <div class="form-group buttons-right">
+            <button type="button" class="btn btn-primary btn-action" onclick="createEmpleado()">Crear</button>
+            <button type="button" class="btn btn-secondary btn-action" onclick="readEmpleado()">Leer</button>
+            <button type="button" class="btn btn-info btn-action" onclick="updateEmpleado()">Actualizar</button>
+            <button type="button" class="btn btn-danger btn-action" onclick="deleteEmpleado()">Eliminar</button>
+            <button type="button" class="btn btn-warning btn-action" onclick="clearForm()">Limpiar</button>
+        </div>
+    </form>
+    <div id="mensaje" class="alert" role="alert" style="display:none;"></div>
+</div>
+
+<!-- Importar el archivo JS específico para empleados -->
+<script src="/static/js/empleados.js"></script>
+<link rel="stylesheet" href="/static/css/empleado.css">
+{% endblock %}

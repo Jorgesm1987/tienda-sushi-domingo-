@@ -1,0 +1,257 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Estilos específicos para el carrusel */
+.carousel-container {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.carousel-indicators li {
+    background-color: #000;
+}
+
+/* Estilos específicos para el catálogo de productos */
+.product-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    margin: 1em;
+    padding: 1em;
+    width: calc(33% - 2em);
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 0.5em;
+    margin-right: 1em;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-add {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+.btn-remove {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-remove:hover {
+    background-color: #e0a800;
+}
+
+.message {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Estilos adicionales para la página de ofertas */
+.promotion {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.promotion-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Estilos adicionales para formularios de registro y login */
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+form .form-group {
+    margin-bottom: 1.5em;
+}
+
+form .btn {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.alert {
+    margin-top: 1em;
+    display: none;
+}
+
+.alert-success {
+    color: green;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: red;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Estilos específicos para los botones de acción */
+.btn-action {
+    background-color: #555;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #777;
+}
+
+/* Estilos específicos para el modal de éxito */
+.modal-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #28a745;
+    color: white;
+}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrito de Compras{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Carrito de Compras</h2><br><p>
+    <table id="cart-table" class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Precio Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Items del carrito se añadirán aquí dinámicamente -->
+
+        </tbody>
+    </table>
+    <div class="cart-total-container">
+        <p id="cart-total" class="cart-total">Total a pagar: $0</p>
+        <button id="checkout-btn" class="btn btn-checkout">Pagar</button>
+    </div>
+</div>
+</div>
+
+<script src="/static/js/carrito.js"></script>
+
+<form id="checkout-form" action="/ventas_backend/negocio/pagar/" method="post">
+    <input type="hidden" id="cart-total" name="total" />
+    {% for item in items %}
+        <input type="hidden" name="items[{{ item.producto.id }}]" value="{{ item.total }}" />
+    {% endfor %}
+    
+</form>
+<script>
+    document.getElementById('checkout-btn').addEventListener('click', function(e) {
+        var cartTotal = document.getElementById('cart-total');
+        cartTotal.value = document.getElementById('cart-total').innerHTML.trim().slice(20);
+        var formData = new FormData(document.getElementById('checkout-form'));
+        fetch('/ventas_backend/negocio/pagar/', {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error al realizar la compra');
+            }
+        })
+        .then(function(data) {
+            if (data.status === 'success') {
+                alert('Compra realizada correctamente');
+                location.reload();
+            } else {
+                alert('Error al realizar la compra');
+            }
+        })
+        .catch(function(error) {
+            alert(error.message);
+        });
+    });
+</script>
+
+
+
+<script>
+    document.getElementById('checkout-btn').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent the form from submitting normally
+        var cartTotal = document.getElementById('cart-total');
+        cartTotal.value = document.getElementById('cart-total').innerHTML.trim().slice(20);
+        var formData = new FormData(document.getElementById('checkout-form'));
+        fetch('/carrito.html', {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error al realizar la compra');
+            }
+        })
+        .then(function(data) {
+            if (data.status === 'success') {
+                alert('Compra realizada correctamente');
+                location.reload();
+            } else {
+                alert('Error al realizar la compra');
+            }
+        })
+        .catch(function(error) {
+            alert(error.message);
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+/* Aseguramos que todo el carrusel tenga fondo negro */
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+    background-color: black !important;
+}
+
+/* Fondo negro para los contenedores del carrusel */
+.carousel-container,
+.carousel-item {
+    background-color: black !important;
+}
+
+/* Aseguramos que las imágenes del carrusel también tengan fondo negro */
+.carousel-item img {
+    background-color: black;
+    display: block;
+    margin: auto;
+}
+
+/* Opcional: ajustamos la opacidad de los controles para que no se vean tan contrastados */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators li {
+    background-color: white;
+}
+
+.carousel-indicators .active {
+    background-color: gray;
+}
+/* Deja el fondo negro en toda la página */
+body {
+    background-color: black;
+}
+
+/* Dale el mejor estilo al carrusel */
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+    background-color: black !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centra las imágenes del body */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

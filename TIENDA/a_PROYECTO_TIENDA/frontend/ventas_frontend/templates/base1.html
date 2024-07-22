@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tienda de Sushi{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/scripts.js" defer></script>
+</head>
+<body>
+    <header class="navbar-fixed">
+        <div class="navbar-container">
+            <h1>Tienda de Sushi</h1>
+            <nav>
+                <ul>
+                    <li><a href="/home">Inicio</a></li>
+                    <li><a href="/empleados">Empleados</a></li>
+                    <li><a href="/clientes">Clientes</a></li>
+                    <li><a href="/catalogo">Catálogo</a></li>
+                    <li><a href="/carrito">Carrito</a></li>
+                    <li><a href="/ofertas">Ofertas</a></li>
+                    <li><a href="/promociones">Promociones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Contacto: tienda@sushi.com | Teléfono: 123-456-789</p>
+    </footer>
+</body>
+</html>

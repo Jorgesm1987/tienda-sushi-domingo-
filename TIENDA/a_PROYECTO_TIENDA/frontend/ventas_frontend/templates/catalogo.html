@@ -1,0 +1,291 @@
+<!-- ventas_frontend/templates/catalogo.html -->
+{% extends 'base.html' %}
+
+{% block title %}Catálogo de Productos - New Sushi{% endblock %}
+
+{% block content %}
+<h2>Catálogo de Productos</h2>
+<style>
+    .card-body {
+        background-color: #333;
+    }
+    .card {
+        background-color: #222;
+    }
+    
+    .card-summary {
+        position: sticky;
+        top: 0;
+    }
+    
+</style>
+<!-- Catálogo de productos -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/avocado-tori.jpg" alt="Sushi Avocado Tori" class="card-img-top">
+                <div class="card-body">
+                    <h3>Sushi Avocado Tori</h3>
+                    <p>Delicioso sushi con aguacate y pollo teriyaki.</p>
+                    <p class="price" data-price="12990">Precio: $12.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Sushi Avocado Tori', 12990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Sushi Avocado Tori', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/california-baby.jpg" alt="Sushi California Baby" class="card-img-top">
+                <div class="card-body">
+                    <h3>Sushi California Baby</h3>
+                    <p>Clásico sushi California con surimi y aguacate.</p>
+                    <p class="price" data-price="10990">Precio: $10.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Sushi California Baby', 10990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Sushi California Baby', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <!-- Añade más productos aquí -->
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/california-tari.jpg" alt="Sushi California Tari" class="card-img-top">
+                <div class="card-body">
+                    <h3>Sushi California Tari</h3>
+                    <p>Delicioso sushi California con aguacate y pepino.</p>
+                    <p class="price" data-price="11990">Precio: $11.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Sushi California Tari', 11990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Sushi California Tari', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/cebisake-roll.jpg" alt="Cebisake Roll" class="card-img-top">
+                <div class="card-body">
+                    <h3>Cebisake Roll</h3>
+                    <p>Roll de salmón con cebiche con palta chilena y surimi.</p>
+                    <p class="price" data-price="13990">Precio: $13.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Cebisake Roll', 13990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Cebisake Roll', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/crispy-rice-atun.jpg" alt="Crispy Rice Atun" class="card-img-top">
+                <div class="card-body">
+                    <h3>Crispy Rice Atun</h3>
+                    <p>Arroz crujiente con atún con salmón tori..</p>
+                    <p class="price" data-price="14990">Precio: $14.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Crispy Rice Atun', 14990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Crispy Rice Atun', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/crispy-rice-mixtoatunsalmon.jpg" alt="Crispy Rice Mixto Atun Salmon" class="card-img-top">
+                <div class="card-body">
+                    <h3>Crispy Rice Mixto Atun Salmon</h3>
+                    <p>Arroz crujiente con atún y salmón.</p>
+                    <p class="price" data-price="15990">Precio: $15.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Crispy Rice Mixto Atun Salmon', 15990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Crispy Rice Mixto Atun Salmon', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/crispy-ricemixto-atunsalmonpulpo.jpg" alt="Crispy Rice Mixto Atun Salmon Pulpo" class="card-img-top">
+                <div class="card-body">
+                    <h3>Crispy Rice Mixto Atun Salmon Pulpo</h3>
+                    <p>Arroz crujiente con atún, salmón y pulpo.</p>
+                    <p class="price" data-price="16990">Precio: $16.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Crispy Rice Mixto Atun Salmon Pulpo', 16990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Crispy Rice Mixto Atun Salmon Pulpo', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/crispy-rice-pulpo.jpg" alt="Crispy Rice Pulpo" class="card-img-top">
+                <div class="card-body">
+                    <h3>Crispy Rice Pulpo</h3>
+                    <p>Arroz crujiente con pulpo y acompañado de salsa especial de pulpo.</p>
+                    <p class="price" data-price="14990">Precio: $14.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Crispy Rice Pulpo', 14990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Crispy Rice Pulpo', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/crispy-rice-salmon.jpg" alt="Crispy Rice Salmon" class="card-img-top">
+                <div class="card-body">
+                    <h3>Crispy Rice Salmon</h3>
+                    <p>Arroz crujiente con salmón con ingredientes especiales al paladar.</p>
+                    <p class="price" data-price="14990">Precio: $14.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Crispy Rice Salmon', 14990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Crispy Rice Salmon', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/godzilla-roll.jpg" alt="Godzilla Roll" class="card-img-top">
+                <div class="card-body">
+                    <h3>Godzilla Roll</h3>
+                    <p>Roll de sushi frito con camarones y cangrejo incluye salsa de camarones.</p>
+                    <p class="price" data-price="17990">Precio: $17.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Godzilla Roll', 17990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Godzilla Roll', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/godzilla-tempura.jpg" alt="Godzilla Tempura" class="card-img-top">
+                <div class="card-body">
+                    <h3>Godzilla Tempura</h3>
+                    <p>Tempura de camarones con salsa especial.</p>
+                    <p class="price" data-price="18990">Precio: $18.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Godzilla Tempura', 18990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Godzilla Tempura', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/malibu-keto-oriental.jpg" alt="Malibu Keto Oriental" class="card-img-top">
+                <div class="card-body">
+                    <h3>Malibu Keto Oriental</h3>
+                    <p>Sushi keto con ingredientes orientales.</p>
+                    <p class="price" data-price="19990">Precio: $19.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Malibu Keto Oriental', 19990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Malibu Keto Oriental', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/malibu-roll.jpg" alt="Malibu Roll" class="card-img-top">
+                <div class="card-body">
+                    <h3>Malibu Roll</h3>
+                    <p>Roll de sushi con salmón y aguacate.</p>
+                    <p class="price" data-price="16990">Precio: $16.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Malibu Roll', 16990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Malibu Roll', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/porteno-roll.jpg" alt="Porteno Roll" class="card-img-top">
+                <div class="card-body">
+                    <h3>Porteno Roll</h3>
+                    <p>Roll de sushi con carne asada y chimichurri.</p>
+                    <p class="price" data-price="18990">Precio: $18.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Porteno Roll', 18990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Porteno Roll', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <img src="/static/img/pulpo-coreano.jpg" alt="Pulpo Coreano" class="card-img-top">
+                <div class="card-body">
+                    <h3>Pulpo Coreano</h3>
+                    <p>Pulpo marinado con salsa coreana.</p>
+                    <p class="price" data-price="17990">Precio: $17.990</p>
+                    <div class="product-actions">
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="btn btn-add" onclick="addToCart('Pulpo Coreano', 17990, this)">Añadir</button>
+                        <button class="btn btn-remove" onclick="removeFromCart('Pulpo Coreano', this)">Eliminar</button>
+                    </div>
+                    <p class="message" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Resumen de compra -->
+<div id="cart-summary" class="cart-summary">
+    <h3>Resumen de compra</h3>
+    <form id="cart-form">
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        <p id="cart-total" class="cart-total">Total a pagar: $0.00</p>
+        <a href="/carrito/" class="btn btn-checkout">Ir al carrito</a>
+    </form>
+</div>
+
+<script src="/static/js/catalogo.js"></script>
+<link rel="stylesheet" href="/static/css/catalogo.css">
+{% endblock %}

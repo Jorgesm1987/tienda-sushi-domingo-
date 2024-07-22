@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprobante de Boleta</title>
+</head>
+<body>
+    <h1>Comprobante de Boleta</h1>
+    <p>Pedido ID: {{ pedido.id }}</p>
+    <p>Cliente: {{ pedido.cliente.nombre }}</p>
+    <p>Fecha del Pedido: {{ pedido.fecha_pedido }}</p>
+    <p>Dirección de Entrega: {{ pedido.direccion_entrega.direccion }}</p>
+    
+    <h2>Detalles del Pedido</h2>
+    <ul>
+        {% for detalle in detalles %}
+        <li>{{ detalle.producto.nombre }} - {{ detalle.cantidad }} x ${{ detalle.precio }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: ${{ pedido.total }}</p>
+    
+    <h2>Pago</h2>
+    <p>Método de Pago: {{ pago.metodo_pago }}</p>
+    <p>Fecha del Pago: {{ pago.fecha_pago }}</p>
+    <p>Monto: ${{ pago.monto }}</p>
+</body>
+</html>
+

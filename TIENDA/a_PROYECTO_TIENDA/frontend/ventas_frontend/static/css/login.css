@@ -1,0 +1,115 @@
+/* promociones.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.promotion {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.promotion-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.product-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    margin: 1em;
+    padding: 1em;
+    width: calc(33% - 2em);
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 0.5em;
+    margin-right: 1em;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-add {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+.btn-remove {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-remove:hover {
+    background-color: #e0a800;
+}
+
+.message {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart-summary h3 {
+    margin-bottom: 1em;
+}
+
+.cart-summary .btn-checkout {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+.cart-summary .btn-checkout:hover {
+    background-color: #0056b3;
+}
